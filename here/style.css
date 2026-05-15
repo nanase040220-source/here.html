@@ -7,7 +7,7 @@
 
 body, html {
     height: 100%;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     overflow: hidden;
 }
 
@@ -28,22 +28,35 @@ body, html {
     100% { background-position: 0% 50%; }
 }
 
-/* ログインカード: 透明感とぼかしを追加 */
+/* ログインカード */
 .login-card {
-    background-color: rgba(49, 51, 56, 0.9); /* Discord Dark Mode Color */
-    backdrop-filter: blur(15px); /* 背後をぼかしてリアルな質感に */
+    background-color: #313338;
     padding: 32px;
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     width: 100%;
     max-width: 480px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* ロゴのスタイル */
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo-wrapper svg {
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
 }
 
 /* ヘッダー部分 */
 .login-header h2 {
     color: #ffffff;
     font-size: 24px;
+    font-weight: 600;
     margin-bottom: 8px;
     text-align: center;
 }
@@ -55,7 +68,7 @@ body, html {
     text-align: center;
 }
 
-/* 入力グループ */
+/* フォーム関連 */
 .form-group {
     margin-bottom: 20px;
 }
@@ -77,32 +90,30 @@ body, html {
     width: 100%;
     padding: 10px;
     background-color: #1e1f22;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: none;
     border-radius: 3px;
     color: #dbdee1;
     font-size: 16px;
     outline: none;
-    transition: border 0.2s;
 }
 
 .form-group input:focus {
-    border-color: #5865f2;
+    box-shadow: 0 0 0 2px #5865f2;
 }
 
-/* パスワード忘れ */
 .forgot-password {
     display: block;
     color: #00a8fc;
     font-size: 14px;
     text-decoration: none;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .forgot-password:hover {
     text-decoration: underline;
 }
 
-/* ログインボタン */
+/* ボタン */
 .login-button {
     width: 100%;
     padding: 12px;
@@ -113,7 +124,8 @@ body, html {
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    margin-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 12px;
     transition: background-color 0.2s;
 }
 
@@ -121,7 +133,7 @@ body, html {
     background-color: #4752c4;
 }
 
-/* 登録テキスト */
+/* 下部のテキスト */
 .register-text {
     font-size: 14px;
     color: #949ba4;
