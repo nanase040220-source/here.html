@@ -1,4 +1,3 @@
-/* 全体のリセット */
 * {
     margin: 0;
     padding: 0;
@@ -8,70 +7,96 @@
 body, html {
     height: 100%;
     font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #5865F2; /* ベースカラー */
     overflow: hidden;
 }
 
-/* リアルな動く背景グラデーション */
+/* リアルな背景演出 */
 .login-container {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(-45deg, #23272a, #2c2f33, #5865f2, #23272a);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background: #5865F2;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* 背景の動く装飾物 */
+.bg-decor-1, .bg-decor-2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.6;
+    animation: move 20s infinite alternate;
 }
 
-/* ログインカード */
+.bg-decor-1 {
+    width: 600px;
+    height: 600px;
+    background: #4752C4;
+    top: -100px;
+    left: -100px;
+}
+
+.bg-decor-2 {
+    width: 500px;
+    height: 500px;
+    background: #eb459e;
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes move {
+    from { transform: translate(0, 0); }
+    to { transform: translate(100px, 100px); }
+}
+
+/* カードのデザイン */
 .login-card {
+    position: relative;
+    z-index: 10;
     background-color: #313338;
     padding: 32px;
     border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
 }
 
-/* ロゴのスタイル */
+/* ロゴエリアの修正 */
 .logo-wrapper {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
-.logo-wrapper svg {
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+.brand-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
 }
 
-/* ヘッダー部分 */
 .login-header h2 {
-    color: #ffffff;
+    color: white;
     font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 8px;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 .login-header p {
     color: #b5bac1;
-    font-size: 16px;
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-/* フォーム関連 */
-.form-group {
-    margin-bottom: 20px;
-}
+/* 入力フォーム */
+.form-group { margin-bottom: 20px; }
 
 .form-group label {
     display: block;
@@ -82,9 +107,7 @@ body, html {
     margin-bottom: 8px;
 }
 
-.required {
-    color: #f23f42;
-}
+.required { color: #f23f42; }
 
 .form-group input {
     width: 100%;
@@ -97,9 +120,7 @@ body, html {
     outline: none;
 }
 
-.form-group input:focus {
-    box-shadow: 0 0 0 2px #5865f2;
-}
+.form-group input:focus { box-shadow: 0 0 0 2px #5865f2; }
 
 .forgot-password {
     display: block;
@@ -109,11 +130,6 @@ body, html {
     margin-top: 8px;
 }
 
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* ボタン */
 .login-button {
     width: 100%;
     padding: 12px;
@@ -122,28 +138,14 @@ body, html {
     border: none;
     border-radius: 3px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 12px;
-    transition: background-color 0.2s;
 }
 
-.login-button:hover {
-    background-color: #4752c4;
-}
+.login-button:hover { background-color: #4752c4; }
 
-/* 下部のテキスト */
-.register-text {
-    font-size: 14px;
-    color: #949ba4;
-}
+.register-text { font-size: 14px; color: #949ba4; }
 
-.register-text a {
-    color: #00a8fc;
-    text-decoration: none;
-}
-
-.register-text a:hover {
-    text-decoration: underline;
-}
+.register-text a { color: #00a8fc; text-decoration: none; }
