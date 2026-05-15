@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 10000; // Renderが標準で使いたがる10000番に直接固定します
 
 // フォームから送られてくるデータを解析するための設定
 app.use(express.urlencoded({ extended: true }));
